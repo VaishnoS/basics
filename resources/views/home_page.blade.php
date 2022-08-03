@@ -39,6 +39,12 @@
                     </ul>
                 </li>
                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Model<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{url('modell')}}">Model1</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">

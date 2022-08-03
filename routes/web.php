@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,10 @@ Route::get('demo2/{name}/{id}', function ($name, $id) {
 });
 Route::get('bt1', function () {
     return view("bt/bt1");
+});
+
+Route::get('modell', function () {
+    $data = Customer::all();
+    echo "<pre>";
+    print_r($data);
 });
