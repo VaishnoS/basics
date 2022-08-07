@@ -9,5 +9,5 @@ class Customer extends Model
 {
     use HasFactory;
     protected $table = "customer";
-    protected $primatyKey = "customer_id";
+    protected $primaryKey = "customer_id";
 }

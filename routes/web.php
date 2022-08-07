@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +38,10 @@ Route::get('modell', function () {
     echo "<pre>";
     print_r($data);
 });
+Route::get('/customer', [CustomerController::class, 'index']);
+Route::get('/customercreate', [CustomerController::class, 'create'])->name('customercreate');
+Route::get('/customer/{id}/destroy', [CustomerController::class, 'destroy']);
+Route::get('/customer/{id}/edit', [CustomerController::class, 'edit']);
+Route::post('/customer/{id}/update', [CustomerController::class, 'update']);
+Route::get('/customer/{id}/show', [CustomerController::class, 'show']);
+Route::post('/store', [CustomerController::class, 'store'])->name('store');
