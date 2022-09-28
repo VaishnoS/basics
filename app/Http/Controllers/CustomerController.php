@@ -7,6 +7,8 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Arr;
+
 
 class CustomerController extends Controller
 {
@@ -118,5 +120,33 @@ class CustomerController extends Controller
         if ($customer) {
             return redirect()->back()->with('message', 'Customer Delete Successfully !!');
         }
+    }
+    public function helperS()
+    {
+        echo "ADD Array Helper";
+        $array = Arr::add(['name' => 'Desk'], 'price', 100);
+        $array1 = Arr::add(["first_name" => "Vaishno"], "last_name", "Prakash");
+        p($array);
+        p($array1);
+        echo "\n";
+
+        echo "Divide Array Helper";
+        $new_array = Arr::divide(["first_name" => "Vaishno", "last_name" => "Prakash"]);
+        p($new_array);
+        echo "\n";
+
+        echo "Exist Array Helper";
+        $array_exist = array("name" => "Vaishno", "State" => "Uttar Pradesh");
+        p(Arr::exists($array_exist, 'name'));
+        echo "\n";
+
+        echo "Get Array Helper";
+        $array_get = ["product" => ["price" => ['value' => 10000]]];
+        p(Arr::get($array_get, 'product.price.value'));
+
+        echo "\n";
+        echo "Random Array Helper";
+        $array_random = [1, 2, 3, 4, 5];
+        p(Arr::random($array_random, 2));
     }
 }

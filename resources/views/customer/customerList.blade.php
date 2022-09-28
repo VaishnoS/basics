@@ -14,6 +14,9 @@
 
         <nav class="navbar navbar-inverse">
             <div class="navbar-header">
+                <a class="navbar-brand" href="{{ route('home') }}">Home</a>
+            </div>
+            <div class="navbar-header">
                 <a class="navbar-brand" href="{{ route('customercreate') }}">Add Customer</a>
             </div>
             <ul class="nav navbar-nav">

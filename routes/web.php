@@ -45,3 +45,4 @@ Route::get('/customer/{id}/edit', [CustomerController::class, 'edit']);
 Route::post('/customer/{id}/update', [CustomerController::class, 'update']);
 Route::get('/customer/{id}/show', [CustomerController::class, 'show']);
 Route::post('/store', [CustomerController::class, 'store'])->name('store');
+Route::get('/helperS', [CustomerController::class, 'helperS'])->name('helperS');
