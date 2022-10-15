@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ProjectController;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 /*
@@ -52,3 +53,4 @@ Route::group(['Prefix' => 'member'], function () {
     Route::get('one-to-one-relationship', [MemberController::class, 'index'])->name('member/one-to-one-relationship');
     Route::get('one-to-many-relationship', [MemberController::class, 'many_relationship'])->name('member/one-to-many-relationship');
 });
+Route::get('/group-binding/{id}', [ProjectController::class, 'index']);
