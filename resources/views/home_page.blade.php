@@ -56,7 +56,12 @@
                         <li><a href="{{route('helperS')}}">Laravel Helper</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Page 2</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="{{route('get-sessions')}}">Session<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{route('get-sessions')}}">Session</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Page 3</a></li>
             </ul>
         </div>

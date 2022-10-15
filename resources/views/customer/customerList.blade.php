@@ -44,6 +44,7 @@
                     <td>Country</td>
                     <td>Status</td>
                     <td>Created at</td>
+                    <td>Updated at</td>
                     <td>Actions</td>
                 </tr>
             </thead>
@@ -71,7 +72,8 @@
                     @else
                     <td>In-active</td>
                     @endif
-                    <td>{!! date('Y-m-d H:i:s', strtotime($value->created_at)); !!}</td>
+                    <td>{!! $value->created_at !!}</td>
+                    <td>{!! $value->updated_at !!}</td>
 
 
                     <!-- we will also add show, edit, and delete buttons -->

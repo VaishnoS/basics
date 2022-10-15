@@ -149,4 +149,21 @@ class CustomerController extends Controller
         $array_random = [1, 2, 3, 4, 5];
         p(Arr::random($array_random, 2));
     }
+    public function getSessions()
+    {
+        // session()->flush();
+        p("All Data");
+        p(session()->all());
+        p("Condition Wise");
+        if (session()->has('First Name') || session('Last Name')) {
+            p(session('First Name'));
+            p(session('Last Name'));
+        } else {
+            p("Not_Exist");
+        }
+        p("Store Data in session");
+        p(session()->put('First Name', "Vaishno"));
+        p(session(['Last Name' => 'Prakash']));
+        p(session()->forget('Last Name'));
+    }
 }
