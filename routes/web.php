@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MemberController;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 /*
@@ -38,7 +39,7 @@ Route::get('modell', function () {
     echo "<pre>";
     print_r($data);
 });
-Route::get('/customer', [CustomerController::class, 'index']);
+Route::get('/customer', [CustomerController::class, 'index'])->middleware('roleandguard');
 Route::get('/customercreate', [CustomerController::class, 'create'])->name('customercreate');
 Route::get('/customer/{id}/destroy', [CustomerController::class, 'destroy']);
 Route::get('/customer/{id}/edit', [CustomerController::class, 'edit']);
@@ -47,3 +48,7 @@ Route::get('/customer/{id}/show', [CustomerController::class, 'show']);
 Route::post('/store', [CustomerController::class, 'store'])->name('store');
 Route::get('/helperS', [CustomerController::class, 'helperS'])->name('helperS');
 Route::get('/get-sessions', [CustomerController::class, 'getSessions'])->name('get-sessions');
+Route::group(['Prefix' => 'member'], function () {
+    Route::get('one-to-one-relationship', [MemberController::class, 'index'])->name('member/one-to-one-relationship');
+    Route::get('one-to-many-relationship', [MemberController::class, 'many_relationship'])->name('member/one-to-many-relationship');
+});

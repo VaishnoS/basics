@@ -23,7 +23,15 @@
                 <li><a href="{{ url('customer') }}">View Customer</a></li>
             </ul>
         </nav>
-
+        <form method="get">
+            <div class="form-group">
+                <input type="search" name="search" id="search" class="form-control" placeholder="Search Customer By Name and Email" value="{{$search}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="{{url('customer')}}">
+                <button type="button" class="btn btn-primary">Reset</button>
+            </a>
+        </form>
         <h1>All Customers</h1>
 
         <!-- will be used to show any messages -->
@@ -96,7 +104,7 @@
                 @endif
             </tbody>
         </table>
-
+        {{$data->links()}}
     </div>
 </body>
 
@@ -109,9 +117,9 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.table-bordered').DataTable({
+        /* $('.table-bordered').DataTable({
 
 
-        });
+        }); */
     });
 </script>

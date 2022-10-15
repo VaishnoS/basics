@@ -17,10 +17,15 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Customer::orderBy("customer_id", "desc")->get();
-        return view('customer.customerList', ['data' => $data]);
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            $data = Customer::where("name", "LIKE", "$search%")->orWhere("email", "LIKE", "%$search")->get();
+        } else {
+            $data = Customer::orderBy("customer_id", "desc")->paginate(10);
+        }
+        return view('customer.customerList', ['data' => $data, 'search' => $search]);
     }
 
     /**

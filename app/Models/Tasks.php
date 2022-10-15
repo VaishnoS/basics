@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Random extends Model
+class Tasks extends Model
 {
     use HasFactory;
-    protected $table="random";
+    protected $table = 'tasks';
 }

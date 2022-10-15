@@ -62,7 +62,14 @@
                         <li><a href="{{route('get-sessions')}}">Session</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Page 3</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">ORM Relationship<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{route('member/one-to-one-relationship')}}">One to One Relationship</a></li>
+                        <li><a href="{{route('member/one-to-many-relationship')}}">One to Many Relationship</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
     </nav>
